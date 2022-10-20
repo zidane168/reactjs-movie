@@ -45,13 +45,23 @@ function Products( props ) {
 export default Products
  
 
+const styles = {
+    blueColor: {
+        color: 'blue'
+    },
+
+    orangeBackgroundColor: {
+        backgroundColor: 'orange'
+    }
+}
+
 export const Movies = ( props ) => { 
     return (
         props.movies.map( (movie, index ) => {
-            return (           // thieu return ko chayyyyy
-                <div className="movie" key={index}>
-                    <p> { movie.Year } </p>
-                    <p> { movie.Title } </p>
+            return (           // thieu return ko chayyyyy 
+                <div  className="movie" key={index}>
+                    <p style={ styles.blueColor }> { movie.Year } </p>
+                    <p style={ styles.orangeBackgroundColor }> { movie.Title } </p>
                     <p> { movie.Type } </p>
                     <img src={ movie.Poster } alt={ movie.title } />
                     <p> { movie.Year } </p>
