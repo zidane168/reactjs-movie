@@ -1,7 +1,7 @@
 import "./App.css";
 
 import HomePage from './pages/Home' 
-import FormPage from './pages/Form' 
+import UserFormPage from './pages/UserForm' 
 import { Routes, 
   Route,
   Link 
@@ -14,14 +14,14 @@ function App() {
  
       <ul>
         <li>  <Link to="/"> Home Page </Link> </li>
-        <li>  <Link to="/form"> Form Page </Link> </li> 
+        <li>  <Link to="/form"> User Form Page </Link> </li> 
       </ul>
 
       <hr />
 
       <Routes>
         <Route path="/" element={ <HomePage/>}> </Route>
-        <Route path="/form" element={ <FormPage/>}> </Route> 
+        <Route path="/form" element={ <UserFormPage/>}> </Route> 
       </Routes> 
   
     </div>
