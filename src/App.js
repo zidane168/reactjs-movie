@@ -2,6 +2,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 
 import searchIcon from './search.svg'
+import Products, { Movies } from './MovieCard'
 
 const API_URL = 'http://www.omdbapi.com/?apikey=7f4fff21&s=movie';
  
@@ -16,6 +17,7 @@ const API_URL = 'http://www.omdbapi.com/?apikey=7f4fff21&s=movie';
 //     "Poster":"https://m.media-amazon.com/images/M/MV5BOTJlMDIxN2YtYmU0NS00ZjIxLWFiMjgtNjlkZTQ2Y2I1NDQyL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMjI4MjA5MzA@._V1_SX300.jpg"
 //   }
 // ]
+
 
 function App() {
 
@@ -48,24 +50,17 @@ function App() {
         </div>
       </div>
       
-      {
-        movies?.length > 0 ? 
-          movies.map((movie, index) => {
-
-            return (
-              <div className="movie" key={index}>
-                <p> { movie.Year } </p>
-                <p> { movie.Title } </p>
-                <p> { movie.Type } </p>
-                <img src={ movie.Poster } alt={ movie.title } />
-                <p> { movie.Year } </p>
-              </div>
-            )
-          }) : 
-          <>
-            <h1> Movie Not found </h1>
-          </>
+      { 
+        movies?.length > 0 ?  <Movies movies={ movies }/> : 
+                  <>
+                    <h1> Movie Not found!! </h1>
+                  </> 
       }
+
+      {
+        <Products />
+      }
+  
     </div>
   );
 }
